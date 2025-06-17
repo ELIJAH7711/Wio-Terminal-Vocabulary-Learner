@@ -57,7 +57,7 @@ Wio Terminal 是一款高度集成的开发板，设计理念是“All-in-One”
 --工具 → 端口 → 选择对应COM口
 
 3.上传测试程序：
-
+```
 void setup() { pinMode(LED_BUILTIN, OUTPUT); }  
 void loop() {  
   digitalWrite(LED_BUILTIN, HIGH); // 点亮蓝色LED  
@@ -65,7 +65,7 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);  
   delay(1000);  
 }  
-
+```
 点击“上传” → 观察板载LED闪烁即成功
 
 
@@ -88,9 +88,9 @@ String meanings[WORD_COUNT] = {
   "工程师",
   "微控制器"
 };
+```
 
-
-
+```
 ###（完整代码）
 #include <TFT_eSPI.h>
 #include <SPI.h>
@@ -502,18 +502,28 @@ void checkReviewButtons() {
     return;
   }
 }
-
+```
 ## 5. 常见问题
 Q1：屏幕不亮怎么办？
+
 A：
+
 --检查 tft.init() 是否在setup()中调用
+
 --添加背光控制：pinMode(LCD_BACKLIGHT, OUTPUT); digitalWrite(LCD_BACKLIGHT, HIGH);
+
 Q2：按键无反应？
+
 A：
+
 --确认引脚模式设置为 INPUT_PULLUP
+
 --用万用表检测按键是否损坏（按下时电阻应接近0Ω）
+
 Q3：如何添加更多单词？
+
 A：
+
 --扩展数组并修改循环上限
 
 ## 扩展建议
